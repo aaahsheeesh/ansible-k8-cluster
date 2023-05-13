@@ -1,0 +1,6 @@
+[k8_master_nodes]
+master.young.com ansible_host=192.168.137.129
+
+[k8_worker_nodes]
+worker01.young.com ansible_host=192.168.137.136
+worker02.young.com ansible_host=192.168.137.138
