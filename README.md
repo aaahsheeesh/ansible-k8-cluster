@@ -9,3 +9,4 @@ $hostnamectl
 $ifconfig
 cat /etc/hosts
 ip hostname
+$cp env_variables playbook/
