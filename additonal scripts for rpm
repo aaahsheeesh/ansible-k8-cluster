@@ -1,0 +1,26 @@
+- name: Setup nodes and create Kubernetes cluster
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install RPM packages
+      yum:
+        name: "/tmp/packages/*.rpm"
+        state: present
+        disable_gpg_check: yes
+
+    - name: Start and enable Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Start and enable kubelet
+      service:
+        name: kubelet
+        state: started
+        enabled: yes
+
+    # Additional tasks for initializing master and joining workers
+    # ...
+
