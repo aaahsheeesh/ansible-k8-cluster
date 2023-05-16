@@ -21,3 +21,17 @@ $kubectl get nodes
 
 $ansible playbook join------
 
+
+
+
+tasks 
+  tasks:
+    - name: Install necessary packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+
